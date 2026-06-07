@@ -79,6 +79,8 @@ function initAntigravityCarousel() {
 
   const navBtns = document.querySelectorAll('.nav-btn');
   const dotBtns = document.querySelectorAll('.dot-btn');
+  const prevBtn = document.getElementById('prevSlideBtn');
+  const nextBtn = document.getElementById('nextSlideBtn');
   const slider = document.getElementById('slidesSlider');
 
   let currentSlide = 1;
@@ -154,6 +156,23 @@ function initAntigravityCarousel() {
       goToSlide(slideNum);
     });
   });
+
+  // Arrow Navigation Controls
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      let target = currentSlide - 1;
+      if (target < 1) target = 3;
+      goToSlide(target);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      let target = currentSlide + 1;
+      if (target > 3) target = 1;
+      goToSlide(target);
+    });
+  }
 
   // Interactive Card Depth effects in Showcase
   const cards = document.querySelectorAll('.vintage-card');
