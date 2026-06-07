@@ -985,6 +985,13 @@ a.detail-value:hover {
 .slide-dot-indicators {
   display: flex;
   gap: 0.75rem;
+  position: relative;
+  padding: 0 7px;
+  height: 24px;
+  align-items: center;
+  background-color: rgba(74, 44, 17, 0.03);
+  border-radius: 20px;
+  border: 1px solid rgba(74, 44, 17, 0.05);
 }
 
 .dot-btn {
@@ -994,17 +1001,26 @@ a.detail-value:hover {
   background-color: var(--cream-dark);
   border: none;
   cursor: pointer;
-  transition: var(--transition-fast);
+  transition: background-color 0.3s;
+  z-index: 2;
 }
 
 .dot-btn:hover {
   background-color: var(--brown-light);
 }
 
-.dot-btn.active {
-  background-color: var(--brown-dark);
+.active-pill {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
   width: 24px;
+  height: 10px;
   border-radius: 5px;
+  background-color: var(--brown-dark);
+  pointer-events: none;
+  z-index: 3;
+  transition: left 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .state-products #carouselHeading {

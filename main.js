@@ -117,7 +117,7 @@ function initAntigravityCarousel() {
       }
     });
 
-    // 3. Update active dot indicators
+    // 3. Update active dot indicators & slide active pill
     dotBtns.forEach((dot, idx) => {
       if (idx + 1 === currentSlide) {
         dot.classList.add('active');
@@ -125,6 +125,12 @@ function initAntigravityCarousel() {
         dot.classList.remove('active');
       }
     });
+
+    const activeDot = dotBtns[currentSlide - 1];
+    const pill = document.getElementById('activePill');
+    if (pill && activeDot) {
+      pill.style.left = (activeDot.offsetLeft - 7) + 'px';
+    }
 
     // 4. Slide transition
     if (slider) {
