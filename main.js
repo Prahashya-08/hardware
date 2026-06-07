@@ -14,9 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Antigravity product grid interaction (hover depth & lightbox modal)
   initProductsGrid();
-  
-  // Inquiry form submission simulation
-  initInquiryForm();
 });
 
 /**
@@ -229,63 +226,4 @@ function initProductsGrid() {
   }
 }
 
-/**
- * Inquiry Form validation and submission simulation
- */
-function initInquiryForm() {
-  const form = document.getElementById('inquiryForm');
-  const toast = document.getElementById('toast');
-  
-  if (!form) return;
 
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Form Inputs
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const service = document.getElementById('service').value;
-    const message = document.getElementById('message').value.trim();
-
-    // Validations
-    if (!name || !phone || !email || !service || !message) {
-      alert('Please fill in all fields before submitting.');
-      return;
-    }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-
-    const phonePattern = /^\+?[0-9\s-]{10,15}$/;
-    if (!phonePattern.test(phone.replace(/\s+/g, ''))) {
-      alert('Please enter a valid phone number (minimum 10 digits).');
-      return;
-    }
-
-    // Submit Simulation
-    const submitBtn = document.getElementById('submitInquiryBtn');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = 'Sending Inquiry...';
-
-    setTimeout(() => {
-      // Toast notification
-      if (toast) {
-        toast.classList.add('active');
-        setTimeout(() => {
-          toast.classList.remove('active');
-        }, 5000);
-      } else {
-        alert('Thank you! Your estimate request was sent successfully.');
-      }
-
-      form.reset();
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = originalText;
-    }, 1200);
-  });
-}
