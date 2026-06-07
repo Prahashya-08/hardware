@@ -131,7 +131,6 @@ function initScrollSpy() {
  */
 function initProductsGrid() {
   const cards = document.querySelectorAll('.vintage-card');
-  const loadMoreBtn = document.getElementById('loadMoreBtn');
   const lightbox = document.getElementById('lightbox');
   
   if (cards.length === 0) return;
@@ -145,20 +144,6 @@ function initProductsGrid() {
       card.style.zIndex = '';
     });
   });
-
-  // 2. Load More button simulation
-  if (loadMoreBtn) {
-    loadMoreBtn.addEventListener('click', () => {
-      loadMoreBtn.innerHTML = 'Loading Products...';
-      loadMoreBtn.disabled = true;
-      
-      setTimeout(() => {
-        alert("Fabrication catalog fully loaded! In a production deployment, this would fetch additional project photography from our server.");
-        loadMoreBtn.innerHTML = 'Load More';
-        loadMoreBtn.disabled = false;
-      }, 850);
-    });
-  }
 
   // 3. Lightbox slideshow for cards
   if (lightbox) {
