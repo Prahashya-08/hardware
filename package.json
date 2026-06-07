@@ -4,7 +4,8 @@
   "description": "Antigravity website interface mock-up for M.M. Engineering Works",
   "main": "index.html",
   "scripts": {
-    "dev": "npx live-server --port=8000"
+    "dev": "npx live-server --port=8000",
+    "ddev": "npx live-server --port=8000"
   },
   "keywords": [],
   "author": "",
