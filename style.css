@@ -864,83 +864,7 @@ a.detail-value:hover {
   line-height: 1.4;
 }
 
-.map-overlap-card {
-  position: absolute;
-  bottom: -4.5rem;
-  right: -2.5rem;
-  width: 200px;
-  height: 120px;
-  padding: 6px;
-  background-color: var(--cream-pure);
-  border: 1px solid rgba(74, 44, 17, 0.08);
-  border-radius: 10px;
-  z-index: 20;
-}
 
-.map-illustration {
-  width: 100%;
-  height: 100%;
-  background-color: #f2ede4;
-  border-radius: 6px;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(74, 44, 17, 0.04);
-}
-
-.map-grid {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: 15px 15px;
-  background-image: 
-    linear-gradient(to right, rgba(74, 44, 17, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(74, 44, 17, 0.03) 1px, transparent 1px);
-}
-
-.map-road {
-  position: absolute;
-  background-color: var(--cream-pure);
-}
-
-.map-road.horizontal {
-  top: 60%;
-  left: 0;
-  width: 100%;
-  height: 14px;
-}
-
-.map-road.vertical {
-  top: 0;
-  left: 40%;
-  width: 14px;
-  height: 100%;
-}
-
-.map-marker-pin {
-  position: absolute;
-  top: 40%;
-  left: 36%;
-  font-size: 1rem;
-  z-index: 10;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
-  animation: mapFloat 2s ease-in-out infinite alternate;
-}
-
-.map-landmark {
-  position: absolute;
-  top: 15%;
-  left: 55%;
-  font-size: 0.55rem;
-  font-weight: 700;
-  color: var(--brown-muted);
-}
-
-@keyframes mapFloat {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-4px); }
-}
 
 .carousel-control-deck {
   display: flex;
@@ -1510,115 +1434,18 @@ textarea.form-control {
   height: 450px;
 }
 
-.map-simulation {
+.map-iframe {
   width: 100%;
   height: 100%;
-  background-color: #f2ede4;
-  position: relative;
-  overflow: hidden;
+  border: 0;
+  filter: grayscale(0.25) sepia(0.15) contrast(0.95);
+  transition: filter 0.4s ease;
 }
 
-.map-grid-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: 30px 30px;
-  background-image: 
-    linear-gradient(to right, rgba(74, 44, 17, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(74, 44, 17, 0.03) 1px, transparent 1px);
+.map-iframe:hover {
+  filter: none;
 }
 
-.map-road {
-  position: absolute;
-  background-color: var(--cream-pure);
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.02);
-}
-
-.map-road-1 {
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 36px;
-  transform: translateY(-50%);
-}
-
-.map-road-2 {
-  top: 0;
-  left: 30%;
-  width: 36px;
-  height: 100%;
-}
-
-.map-label {
-  position: absolute;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--brown-muted);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.map-marker {
-  position: absolute;
-  top: 45%;
-  left: 29.5%;
-  transform: translate(-50%, -100%);
-  cursor: pointer;
-  z-index: 50;
-}
-
-.marker-pin {
-  width: 28px;
-  height: 28px;
-  border-radius: 50% 50% 50% 0;
-  background: var(--brown-dark);
-  position: absolute;
-  transform: rotate(-45deg);
-  left: 50%;
-  top: 50%;
-  margin: -14px 0 0 -14px;
-  box-shadow: -2px 2px 4px rgba(0,0,0,0.2);
-  animation: bouncePin 1.5s ease-in-out infinite alternate;
-}
-
-.marker-pin::after {
-  content: '';
-  width: 12px;
-  height: 12px;
-  margin: 8px 0 0 8px;
-  background: var(--cream-pure);
-  position: absolute;
-  border-radius: 50%;
-}
-
-.marker-popup {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: var(--cream-pure);
-  border: 1px solid rgba(74, 44, 17, 0.08);
-  border-radius: 8px;
-  padding: 0.75rem 1.25rem;
-  width: 200px;
-  box-shadow: var(--shadow-high);
-  text-align: center;
-  pointer-events: none;
-}
-
-.marker-popup span {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 0.82rem;
-  color: var(--brown-dark);
-}
-
-@keyframes bouncePin {
-  0% { transform: rotate(-45deg) translate(0, 0); }
-  100% { transform: rotate(-45deg) translate(-5px, 5px); }
-}
 
 /* Toast Alerts */
 .toast {
@@ -1941,5 +1768,408 @@ textarea.form-control {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
+  }
+}
+
+/* ==========================================================================
+   UNIFIED SINGLE-PAGE HOMEPAGE STYLES (Warm Brown/Cream Palette)
+   ========================================================================== */
+
+.section-bg {
+  background-color: var(--cream-soft);
+}
+
+/* Section Headers */
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+}
+
+.section-header h2 {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  color: var(--brown-dark);
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--brown-light);
+  border-radius: 2px;
+}
+
+.section-header p {
+  color: var(--brown-muted);
+  font-size: 1.05rem;
+}
+
+/* Features Grid */
+.features-grid {
+  margin-top: 1.5rem;
+}
+
+.feature-card {
+  background-color: var(--cream-pure);
+  padding: 2.5rem 2rem;
+  border-radius: 8px;
+  border: 1px solid rgba(74, 44, 17, 0.04);
+  border-bottom: 3px solid transparent;
+  box-shadow: var(--shadow-low);
+  transition: var(--transition-mid);
+  height: 100%;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-bottom-color: var(--brown-light);
+  box-shadow: var(--shadow-mid);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(122, 89, 62, 0.1);
+  color: var(--brown-light);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--brown-dark);
+  margin-bottom: 0.75rem;
+}
+
+.feature-card p {
+  color: var(--brown-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* About Vendor Section */
+.about-image-wrapper {
+  position: relative;
+}
+
+.about-image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: -20px;
+  bottom: -20px;
+  border: 4px solid var(--brown-light);
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.about-img {
+  position: relative;
+  z-index: 2;
+  border-radius: 8px;
+  box-shadow: var(--shadow-mid);
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.about-badge {
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  background-color: var(--brown-dark);
+  color: var(--cream-pure);
+  padding: 1.25rem;
+  border-radius: 8px;
+  z-index: 3;
+  box-shadow: var(--shadow-high);
+  text-align: center;
+}
+
+.about-badge .years {
+  font-size: 2.25rem;
+  font-weight: 800;
+  display: block;
+  line-height: 1;
+  font-family: var(--font-serif);
+}
+
+.about-badge .text {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.about-content h3 {
+  font-size: 1.25rem;
+  color: var(--brown-light);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-serif);
+}
+
+.about-content h2 {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--brown-dark);
+}
+
+.about-content p {
+  color: var(--brown-muted);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.proprietor-info {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--cream-dark);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.proprietor-icon {
+  background-color: var(--cream-soft);
+  color: var(--brown-dark);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  border: 1px solid var(--cream-dark);
+}
+
+.proprietor-name {
+  font-weight: 700;
+  color: var(--brown-dark);
+  font-size: 0.95rem;
+}
+
+.proprietor-title {
+  font-size: 0.8rem;
+  color: var(--brown-muted);
+}
+
+/* Circular Logo Medallion in Header (VedaHarmony style) */
+.logo-icon-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--brown-dark);
+  border: 1px solid var(--cream-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-low);
+  transition: transform 0.3s ease;
+}
+
+.logo-link-multipage:hover .logo-icon-circle {
+  transform: rotate(5deg) scale(1.05);
+}
+
+.hanuman-logo-header {
+  fill: var(--cream-pure);
+  stroke: var(--cream-pure);
+}
+
+/* VedaHarmony Reference Hero Section (Earthy/Industrial Dark Theme) */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--brown-dark);
+  background-image: url('assets/hero_industrial.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: var(--header-height);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(30, 15, 5, 0.75) 0%, rgba(15, 5, 0, 0.9) 100%);
+  z-index: 2;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  max-width: 900px;
+}
+
+/* Emblem Style matching the Gold Leaf Logo in circle */
+.hero-emblem-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.hero-emblem {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 1px solid var(--cream-pure);
+  outline: 4px double var(--brown-light);
+  outline-offset: 2px;
+  background-color: rgba(74, 44, 17, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  transition: transform 0.5s ease;
+}
+
+.hero-emblem:hover {
+  transform: rotate(5deg) scale(1.05);
+}
+
+.hanuman-emblem-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.15));
+}
+
+.hero-brand-name {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: var(--cream-pure);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.hero-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #d97706; /* Warm Amber Gold */
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: 3.75rem;
+  line-height: 1.15;
+  color: var(--cream-pure);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.hero-desc {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--cream-dark);
+  margin-bottom: 3rem;
+  max-width: 680px;
+  font-weight: 300;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Beautiful Rounded Pill Buttons */
+.btn-hero {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.5rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-hero-solid {
+  background-color: #a16207; /* Warm Terracotta Olive-Gold */
+  color: var(--cream-pure);
+  border: 1px solid #a16207;
+  box-shadow: 0 4px 14px rgba(161, 98, 7, 0.3);
+}
+
+.btn-hero-solid:hover {
+  background-color: #ca8a04;
+  border-color: #ca8a04;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(161, 98, 7, 0.5);
+}
+
+.btn-hero-outline {
+  background-color: transparent;
+  color: var(--cream-pure);
+  border: 2px solid rgba(252, 251, 249, 0.4);
+}
+
+.btn-hero-outline:hover {
+  border-color: var(--cream-pure);
+  background-color: rgba(252, 251, 249, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Responsive adjustment for Hero section */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+  }
+  .hero-ctas {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 300px;
+  }
+  .btn-hero {
+    width: 100%;
+    padding: 0.8rem 2rem;
   }
 }

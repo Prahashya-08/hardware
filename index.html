@@ -5,393 +5,701 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Meta Tags -->
-  <title>M.M. Engineering Works | Antigravity Design Mock-up</title>
-  <meta name="description" content="Antigravity interactive website design mockup for M.M. Engineering Works. Minimal, sophisticated, floating elements in warm brown and off-white.">
-  <meta name="keywords" content="structural steel, fabrication, Bangalore, A C Manjunatha, Antigravity mockup, warm brown and off-white">
+  <title>M.M. Engineering Works | Pre-Engineered Buildings & Custom Steel Fabrication Bangalore</title>
+  <meta name="description" content="M.M. Engineering Works is Bangalore's leading manufacturer of Pre-Engineered Buildings (PEB), heavy-duty rolling shutters, security gates, and custom steel structures. Contact proprietor A C Manjunatha today.">
+  <meta name="keywords" content="structural steel fabrication bangalore, PEB manufacturers bangalore, industrial rolling shutters, security gates bangalore, sheet metal fabrication, SS works Bangalore, A C Manjunatha, Antigravity portfolio">
   
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- SVG Displacement Filter for Deckled/Torn Paper Edge -->
-  <svg style="position: absolute; width: 0; height: 0;" width="0" height="0">
-    <defs>
-      <filter id="deckle-edge">
-        <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" result="noise" />
-        <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" />
-      </filter>
-    </defs>
-  </svg>
-
-  <!-- Plaster textured wall background container -->
-  <div class="wall-background">
-    
-    <!-- Shadow backdrop and side peeks of other sections -->
-    <div class="mockup-page-backdrop left-peek"></div>
-    <div class="mockup-page-backdrop right-peek"></div>
-
-    <!-- Main Floating Website Canvas -->
-    <div class="mockup-canvas state-products" id="appCanvas">
-      
-      <!-- Top Navigation Header -->
-      <header class="mockup-header">
-        <div class="logo-group">
-          <!-- Brown Hanuman carrying mountain logo silhouette -->
-          <svg class="hanuman-logo" viewBox="0 0 100 100" width="36" height="36">
+  <!-- Navigation Header -->
+  <header id="mainHeader">
+    <div class="container nav-container">
+      <a href="#home" class="logo-link-multipage" id="logoLink">
+        <div class="logo-icon-circle">
+          <svg class="hanuman-logo-header" viewBox="0 0 100 100" width="22" height="22">
             <!-- Head & Mukut -->
-            <circle cx="48" cy="32" r="5.5" fill="#4a2c11" />
-            <polygon points="44,27 48,16 52,27" fill="#4a2c11" />
-            <!-- Tail curling over back -->
-            <path d="M 56 50 C 74 48, 80 34, 73 20 C 66 10, 54 16, 54 26" fill="none" stroke="#4a2c11" stroke-width="3.5" stroke-linecap="round" />
-            <!-- Left Arm holding Dronagiri Mountain -->
-            <path d="M 43 36 L 28 26 L 22 28 L 26 38 Z" fill="#4a2c11" />
-            <polygon points="10,27 26,7 42,27" fill="#4a2c11" />
-            <polygon points="16,27 23,17 30,27" fill="#4a2c11" />
-            <!-- Right Arm holding Mace (Gada) -->
-            <path d="M 53 36 L 63 43 L 66 40 L 56 33 Z" fill="#4a2c11" />
-            <path d="M 61 40 L 76 56" stroke="#4a2c11" stroke-width="4" stroke-linecap="round" />
-            <circle cx="78" cy="58" r="6" fill="#4a2c11" />
-            <!-- Flying Torso -->
-            <path d="M 44 38 C 47 38, 51 39, 53 45 C 53 51, 48 56, 44 58 Z" fill="#4a2c11" />
-            <!-- Flying Legs -->
-            <path d="M 43 58 L 33 70 L 28 69 L 37 57 Z" fill="#4a2c11" />
-            <path d="M 46 58 L 56 71 L 61 69 L 49 57 Z" fill="#4a2c11" />
+            <circle cx="48" cy="32" r="5.5" fill="#fcfbf9" />
+            <polygon points="44,27 48,16 52,27" fill="#fcfbf9" />
+            <!-- Tail -->
+            <path d="M 56 50 C 74 48, 80 34, 73 20 C 66 10, 54 16, 54 26" fill="none" stroke="#fcfbf9" stroke-width="3.5" stroke-linecap="round" />
+            <!-- Left Arm & Mountain -->
+            <path d="M 43 36 L 28 26 L 22 28 L 26 38 Z" fill="#fcfbf9" />
+            <polygon points="10,27 26,7 42,27" fill="#fcfbf9" />
+            <!-- Right Arm & Mace -->
+            <path d="M 53 36 L 63 43 L 66 40 L 56 33 Z" fill="#fcfbf9" />
+            <path d="M 61 40 L 76 56" stroke="#fcfbf9" stroke-width="4" stroke-linecap="round" />
+            <circle cx="78" cy="58" r="6" fill="#fcfbf9" />
+            <!-- Torso -->
+            <path d="M 44 38 C 47 38, 51 39, 53 45 C 53 51, 48 56, 44 58 Z" fill="#fcfbf9" />
+            <!-- Legs -->
+            <path d="M 43 58 L 33 70 L 28 69 L 37 57 Z" fill="#fcfbf9" />
+            <path d="M 46 58 L 56 71 L 61 69 L 49 57 Z" fill="#fcfbf9" />
           </svg>
-          <div class="company-name-wrapper">
-            <span class="logo-text-main">M.M. Engineering Works</span>
-            <span class="logo-text-sub">Estd. 1975</span>
-          </div>
         </div>
+        <span class="logo-main-text">M.M. Engineering Works</span>
+      </a>
+      
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navMenu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#products" class="nav-link">Products</a></li>
+          <li><a href="#why-us" class="nav-link">Why Choose Us</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+          <li><a href="#contact" class="nav-link">Contact Us</a></li>
+          <li><a href="#contact" class="nav-cta" id="headerCtaBtn">Get a Quote</a></li>
+        </ul>
+      </nav>
+      
+      <button class="menu-toggle" id="menuToggleBtn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
 
-        <nav class="mockup-nav" aria-label="Mockup Navigation">
-          <button class="nav-btn active" data-slide="1" id="navProducts">Products</button>
-          <button class="nav-btn" data-slide="2" id="navAbout">About</button>
-          <button class="nav-btn" data-slide="2" id="navFaq">FAQ</button>
-          <button class="nav-btn" data-slide="3" id="navContact">Contact</button>
-        </nav>
-      </header>
-
-      <!-- Carousel Viewport -->
-      <div class="carousel-viewport">
-        
-        <!-- Dynamic Header (changes content & animation based on active slide) -->
-        <div class="heading-container">
-          <h1 class="dynamic-heading" id="carouselHeading">OUR ENGINEERING PORTFOLIO</h1>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="container hero-container">
+      
+      <!-- Central Circular Hanuman Emblem -->
+      <div class="hero-emblem-wrapper">
+        <div class="hero-emblem">
+          <svg class="hanuman-emblem-svg" viewBox="0 0 100 100">
+            <!-- Head & Mukut -->
+            <circle cx="48" cy="32" r="5.5" fill="#fcfbf9" />
+            <polygon points="44,27 48,16 52,27" fill="#fcfbf9" />
+            <!-- Tail curling over back -->
+            <path d="M 56 50 C 74 48, 80 34, 73 20 C 66 10, 54 16, 54 26" fill="none" stroke="#fcfbf9" stroke-width="3.5" stroke-linecap="round" />
+            <!-- Left Arm holding Dronagiri Mountain -->
+            <path d="M 43 36 L 28 26 L 22 28 L 26 38 Z" fill="#fcfbf9" />
+            <polygon points="10,27 26,7 42,27" fill="#fcfbf9" />
+            <polygon points="16,27 23,17 30,27" fill="#fcfbf9" />
+            <!-- Right Arm holding Mace (Gada) -->
+            <path d="M 53 36 L 63 43 L 66 40 L 56 33 Z" fill="#fcfbf9" />
+            <path d="M 61 40 L 76 56" stroke="#fcfbf9" stroke-width="4" stroke-linecap="round" />
+            <circle cx="78" cy="58" r="6" fill="#fcfbf9" />
+            <!-- Torso -->
+            <path d="M 44 38 C 47 38, 51 39, 53 45 C 53 51, 48 56, 44 58 Z" fill="#fcfbf9" />
+            <!-- Legs -->
+            <path d="M 43 58 L 33 70 L 28 69 L 37 57 Z" fill="#fcfbf9" />
+            <path d="M 46 58 L 56 71 L 61 69 L 49 57 Z" fill="#fcfbf9" />
+          </svg>
         </div>
-
-        <!-- The Antigravity Grid Layout (contains all cards which float, rotate, and fade dynamically) -->
-        <div class="antigravity-grid" id="photoGrid">
-          
-          <!-- Card 1 -->
-          <div class="vintage-card" style="--rot: -1.2deg; --delay: 0s;" data-index="1">
-            <div class="photo-frame">
-              <img src="assets/peb_structure.png" alt="Warehouse Truss Framing">
-              <span class="photo-caption">PEB Truss Framework</span>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="vintage-card" style="--rot: 1.5deg; --delay: 0.05s;" data-index="2">
-            <div class="photo-frame">
-              <img src="assets/hero_industrial.png" alt="Industrial Fabrication Site">
-              <span class="photo-caption">Heavy Industrial Construction</span>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div class="vintage-card" style="--rot: -0.8deg; --delay: 0.1s;" data-index="3">
-            <div class="photo-frame">
-              <img src="assets/peb_structure.png" alt="Factory Building Construction">
-              <span class="photo-caption">Structural PEB Factory</span>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div class="vintage-card" style="--rot: 1.1deg; --delay: 0.15s;" data-index="4">
-            <div class="photo-frame">
-              <img src="assets/sheet_metal.png" alt="Steel Roof Purlins">
-              <span class="photo-caption">Trusses & Purlins Detail</span>
-            </div>
-          </div>
-
-          <!-- Card 5 -->
-          <div class="vintage-card" style="--rot: -1.4deg; --delay: 0.2s;" data-index="5">
-            <div class="photo-frame">
-              <img src="assets/aluminum_works.png" alt="Heavy Column Base">
-              <span class="photo-caption">Heavy Columns & Bracing</span>
-            </div>
-          </div>
-
-          <!-- Card 6 -->
-          <div class="vintage-card" style="--rot: 1.7deg; --delay: 0.25s;" data-index="6">
-            <div class="photo-frame">
-              <img src="assets/rolling_shutters.png" alt="Motorized Shutter Installation">
-              <span class="photo-caption">Motorized Rolling Shutters</span>
-            </div>
-          </div>
-
-          <!-- Card 7 -->
-          <div class="vintage-card" style="--rot: -0.5deg; --delay: 0.3s;" data-index="7">
-            <div class="photo-frame">
-              <img src="assets/peb_structure.png" alt="Steel Roof Truss Construction">
-              <span class="photo-caption">Steel Roof Truss Grid</span>
-            </div>
-          </div>
-
-          <!-- Card 8 -->
-          <div class="vintage-card" style="--rot: 0.9deg; --delay: 0.35s;" data-index="8">
-            <div class="photo-frame">
-              <img src="assets/hero_industrial.png" alt="Warehouse Structural Girders">
-              <span class="photo-caption">Warehouse Portal Frames</span>
-            </div>
-          </div>
-
-          <!-- Card 9 -->
-          <div class="vintage-card" style="--rot: -1.6deg; --delay: 0.4s;" data-index="9">
-            <div class="photo-frame">
-              <img src="assets/sheet_metal.png" alt="Heavy Metal Steel Girders">
-              <span class="photo-caption">Heavy Girders Erection</span>
-            </div>
-          </div>
-
-          <!-- Card 10 -->
-          <div class="vintage-card" style="--rot: 1.3deg; --delay: 0.45s;" data-index="10">
-            <div class="photo-frame">
-              <img src="assets/rolling_shutters.png" alt="Galvanized Security Shutter">
-              <span class="photo-caption">Galvanized Security Doors</span>
-            </div>
-          </div>
-
-          <!-- Card 11 -->
-          <div class="vintage-card" style="--rot: -0.9deg; --delay: 0.5s;" data-index="11">
-            <div class="photo-frame">
-              <img src="assets/security_gates.png" alt="Blue Sliding Gate">
-              <span class="photo-caption">Blue Steel Grill Wall</span>
-            </div>
-          </div>
-
-          <!-- Card 12 -->
-          <div class="vintage-card" style="--rot: 1.6deg; --delay: 0.55s;" data-index="12">
-            <div class="photo-frame">
-              <img src="assets/peb_structure.png" alt="Warehouse Portal Frame inside">
-              <span class="photo-caption">Internal PEB Framework</span>
-            </div>
-          </div>
-
-          <!-- Card 13 -->
-          <div class="vintage-card" style="--rot: -1.1deg; --delay: 0.6s;" data-index="13">
-            <div class="photo-frame">
-              <img src="assets/security_gates.png" alt="Ornate Metal Entrance Gate">
-              <span class="photo-caption">Decorative Driveway Gates</span>
-            </div>
-          </div>
-
-          <!-- Card 14: Proprietor / Person in Grid -->
-          <div class="vintage-card person-card" style="--rot: 0.5deg; --delay: 0.65s;" data-index="14" id="personCard">
-            <div class="photo-frame">
-              <img src="assets/person_in_grid.png" alt="A C Manjunatha at site">
-              <span class="photo-caption" style="font-weight: 700;">A C Manjunatha (Proprietor)</span>
-            </div>
-          </div>
-
-          <!-- Card 15 -->
-          <div class="vintage-card" style="--rot: -1.3deg; --delay: 0.7s;" data-index="15">
-            <div class="photo-frame">
-              <img src="assets/rolling_shutters.png" alt="Blue Rolling Gate">
-              <span class="photo-caption">Blue Sectional Gate</span>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Overlapping Slide Contents -->
-        
-        <!-- Slide 1 Content: Products Grid controls & Overlapping Contact Summary Card -->
-        <div class="slide-overlay active" id="slide1Overlay">
-          <div class="grid-footer-actions">
-            <button class="mockup-btn-capsule" id="loadMoreBtn">Load More</button>
-          </div>
-
-          <!-- Floating Contact Panel at bottom overlapping the grid -->
-          <div class="floating-contact-summary" id="floatingSummaryCard">
-            <div class="summary-left">
-              <svg viewBox="0 0 100 100" width="48" height="48">
-                <!-- Head & Mukut -->
-                <circle cx="48" cy="32" r="5.5" fill="#4a2c11" />
-                <polygon points="44,27 48,16 52,27" fill="#4a2c11" />
-                <!-- Tail curling over back -->
-                <path d="M 56 50 C 74 48, 80 34, 73 20 C 66 10, 54 16, 54 26" fill="none" stroke="#4a2c11" stroke-width="3.5" stroke-linecap="round" />
-                <!-- Left Arm holding Dronagiri Mountain -->
-                <path d="M 43 36 L 28 26 L 22 28 L 26 38 Z" fill="#4a2c11" />
-                <polygon points="10,27 26,7 42,27" fill="#4a2c11" />
-                <!-- Right Arm holding Mace (Gada) -->
-                <path d="M 53 36 L 63 43 L 66 40 L 56 33 Z" fill="#4a2c11" />
-                <path d="M 61 40 L 76 56" stroke="#4a2c11" stroke-width="4" stroke-linecap="round" />
-                <circle cx="78" cy="58" r="6" fill="#4a2c11" />
-                <!-- Torso -->
-                <path d="M 44 38 C 47 38, 51 39, 53 45 C 53 51, 48 56, 44 58 Z" fill="#4a2c11" />
-                <!-- Legs -->
-                <path d="M 43 58 L 33 70 L 28 69 L 37 57 Z" fill="#4a2c11" />
-                <path d="M 46 58 L 56 71 L 61 69 L 49 57 Z" fill="#4a2c11" />
-              </svg>
-              <div class="summary-company-info">
-                <h3>M.M. Engineering Works</h3>
-                <p>Mfrs of: PEB Buildings, Rolling Shutters, Gates, Window Grills, Doors, Sheet Metals, Aluminum Works, S.S Works, etc...</p>
-              </div>
-            </div>
-            
-            <div class="summary-divider"></div>
-
-            <div class="summary-right">
-              <div class="proprietor-tag">| A C Manjunatha</div>
-              <ul class="summary-contact-list">
-                <li><span class="icon-span">📞</span> +91 98453 98542, +91 98452 33249</li>
-                <li><span class="icon-span">✉️</span> mmengg.1975@gmail.com</li>
-                <li><span class="icon-span">📄</span> GSTIN: 29AHEPM6352L1ZV</li>
-                <li><span class="icon-span">📍</span> No.23 & 24, Near Biocon, Hosur Main Road, Hebbagodi, Bangalore - 560 099.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 2 Content: About Us & FAQ Block -->
-        <div class="slide-overlay" id="slide2Overlay">
-          <div class="about-faq-grid">
-            <!-- Left: About Content -->
-            <div class="about-panel-left floating-hover-card">
-              <h2 class="sub-heading-brown">Why Choose M.M. Engineering Works?</h2>
-              <p class="about-main-text">Established excellence in PEB Buildings, Rolling Shutters, Gates, and Window Grills. Precision engineering since 1975.</p>
-              <p class="about-secondary-text">Over 50 years of robust expertise delivering industrial structural fabrication, customized doors, and high-safety security fittings in Bangalore.</p>
-            </div>
-
-            <!-- Right: FAQ Cards -->
-            <div class="faq-panel-right">
-              <h2 class="sub-heading-brown">Frequently Asked Questions (FAQ)</h2>
-              <div class="faq-card-stack">
-                <div class="floating-faq-card">
-                  <h4>Do you offer custom designs?</h4>
-                  <p>Yes, all fabrication plans are customized to client specifications, site load requirements, and blueprints.</p>
-                </div>
-                <div class="floating-faq-card">
-                  <h4>What is your typical project timeline?</h4>
-                  <p>Standard structures take 4-6 weeks from initial design and detailing approval to factory manufacture and final site erection.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 Content: Deep Contact Panel -->
-        <div class="slide-overlay" id="slide3Overlay">
-          <div class="contact-deep-panel floating-hover-card">
-            
-            <!-- Left Side: Large Hanuman Logo and Title -->
-            <div class="contact-panel-left">
-              <svg viewBox="0 0 100 100" width="80" height="80">
-                <!-- Head & Mukut -->
-                <circle cx="48" cy="32" r="5.5" fill="#4a2c11" />
-                <polygon points="44,27 48,16 52,27" fill="#4a2c11" />
-                <!-- Tail -->
-                <path d="M 56 50 C 74 48, 80 34, 73 20 C 66 10, 54 16, 54 26" fill="none" stroke="#4a2c11" stroke-width="3.5" stroke-linecap="round" />
-                <!-- Left Arm & Mountain -->
-                <path d="M 43 36 L 28 26 L 22 28 L 26 38 Z" fill="#4a2c11" />
-                <polygon points="10,27 26,7 42,27" fill="#4a2c11" />
-                <!-- Right Arm & Mace -->
-                <path d="M 53 36 L 63 43 L 66 40 L 56 33 Z" fill="#4a2c11" />
-                <path d="M 61 40 L 76 56" stroke="#4a2c11" stroke-width="4" stroke-linecap="round" />
-                <circle cx="78" cy="58" r="6" fill="#4a2c11" />
-                <!-- Torso -->
-                <path d="M 44 38 C 47 38, 51 39, 53 45 C 53 51, 48 56, 44 58 Z" fill="#4a2c11" />
-                <!-- Legs -->
-                <path d="M 43 58 L 33 70 L 28 69 L 37 57 Z" fill="#4a2c11" />
-                <path d="M 46 58 L 56 71 L 61 69 L 49 57 Z" fill="#4a2c11" />
-              </svg>
-              <h2 class="company-brand-title">M.M. Engineering Works</h2>
-              <span class="estd-stamp">ESTABLISHED 1975</span>
-            </div>
-
-            <!-- Vertical Divider -->
-            <div class="contact-panel-divider"></div>
-
-            <!-- Right Side: Detailed Contact Information Blocks -->
-            <div class="contact-panel-right">
-              <div class="contact-header-block">
-                <span class="contact-vertical-bar">|</span>
-                <span class="proprietor-label">A C Manjunatha</span>
-              </div>
-              
-              <ul class="contact-deep-list">
-                <li>
-                  <div class="icon-container">📞</div>
-                  <div class="contact-detail-text">
-                    <span class="detail-label">Direct Contacts</span>
-                    <a href="tel:+919845398542" class="detail-value">+91 98453 98542</a>
-                    <a href="tel:+919845233249" class="detail-value">+91 98452 33249</a>
-                  </div>
-                </li>
-                <li>
-                  <div class="icon-container">✉️</div>
-                  <div class="contact-detail-text">
-                    <span class="detail-label">Business Email</span>
-                    <a href="mailto:mmengg.1975@gmail.com" class="detail-value">mmengg.1975@gmail.com</a>
-                  </div>
-                </li>
-                <li>
-                  <div class="icon-container">📄</div>
-                  <div class="contact-detail-text">
-                    <span class="detail-label">GSTIN Details</span>
-                    <span class="detail-value text-highlight">29AHEPM6352L1ZV</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="icon-container">📍</div>
-                  <div class="contact-detail-text">
-                    <span class="detail-label">Factory & Office Address</span>
-                    <span class="detail-value address-value">No. 23 & 24, Near Biocon, Hosur Main Road, Hebbagodi, Bangalore - 560 099.</span>
-                  </div>
-                </li>
-              </ul>
-
-              <!-- Vector Map Overlapping Card -->
-              <div class="map-overlap-card floating-hover-card">
-                <div class="map-illustration">
-                  <div class="map-grid"></div>
-                  <div class="map-road horizontal"></div>
-                  <div class="map-road vertical"></div>
-                  <div class="map-marker-pin">📍</div>
-                  <div class="map-landmark">Near Biocon</div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
       </div>
 
-      <!-- Carousel Navigation Controls at Bottom -->
-      <div class="carousel-control-deck">
-        <button class="slide-arrow" id="prevSlideBtn" aria-label="Previous Slide">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
-        <div class="slide-dot-indicators" id="dotDeck">
-          <button class="dot-btn active" data-slide="1" aria-label="Slide 1"></button>
-          <button class="dot-btn" data-slide="2" aria-label="Slide 2"></button>
-          <button class="dot-btn" data-slide="3" aria-label="Slide 3"></button>
-        </div>
-        <button class="slide-arrow" id="nextSlideBtn" aria-label="Next Slide">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
+      <span class="hero-brand-name">M.M. Engineering Works</span>
+      <span class="hero-tagline">Bengaluru's Industrial Pioneers</span>
+      
+      <h1 id="heroTitle">Engineering Strength.<br>Fabricating the Future.</h1>
+      
+      <p class="hero-desc">Premium Pre-Engineered Buildings, industrial rolling shutters, security gates, and heavy steel fabrication designed and manufactured to withstand the test of time.</p>
+      
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-hero btn-hero-solid">Contact Us</a>
+        <a href="#products" class="btn-hero btn-hero-outline">Explore Products</a>
       </div>
 
     </div>
+  </section>
 
+  <!-- Features Grid Section -->
+  <section class="section" id="featuresSection" aria-labelledby="featuresTitle">
+    <div class="container">
+      <div class="section-header">
+        <h2>Built on Strong Foundations</h2>
+        <p>For over four decades, M.M. Engineering Works has delivered unmatched craftsmanship and structural integrity to commercial and industrial sectors.</p>
+      </div>
+      
+      <div class="grid-4 features-grid">
+        <div class="feature-card" id="feature1">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3>Superior Structural Integrity</h3>
+          <p>We use certified high-grade steel and advanced welding protocols to build structures that withstand extreme loads and time.</p>
+        </div>
+        
+        <div class="feature-card" id="feature2">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <h3>Custom Engineering</h3>
+          <p>Every fabrication plan is tailored to client specifications, ensuring exact load distribution and layout optimization.</p>
+        </div>
+        
+        <div class="feature-card" id="feature3">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <h3>Timely Delivery</h3>
+          <p>We respect deadlines. Our structured project workflows enable on-time execution of critical structural frameworks.</p>
+        </div>
+        
+        <div class="feature-card" id="feature4">
+          <div class="feature-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
+          <h3>Decades of Expertise</h3>
+          <p>Our technical expertise spans generations, ensuring flawless fabrication on site and in the factory.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Vendor Section -->
+  <section class="section section-bg" id="aboutSection" aria-labelledby="aboutTitle">
+    <div class="container grid-2">
+      <div class="about-image-wrapper">
+        <img src="assets/hero_industrial.png" alt="Industrial Construction framework by MM Engineering Works" class="about-img">
+      </div>
+      
+      <div class="about-content">
+        <h2 id="aboutTitle">Bangalore's Trusted Heavy Structural Fabricators</h2>
+        <p>For half a century, M.M. Engineering Works has been synonymous with safety, strength, and structural excellence. Based near Biocon on Hosur Main Road, Hebbagodi, we operate a fully equipped, modern fabrication facility capable of handling massive industrial structures as well as precision architectural aluminum and stainless steel works.</p>
+        <p>Under the visionary leadership of our proprietor, <strong>A C Manjunatha</strong>, we have partnered with Bangalore's leading real estate developers, warehouse operators, factory owners, and commercial builders to deliver structural excellence that stands strong.</p>
+        
+        <div class="proprietor-info">
+          <div class="proprietor-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <div>
+            <div class="proprietor-name">A C Manjunatha</div>
+            <div class="proprietor-title">Proprietor, M.M. Engineering Works</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section (Antigravity Plaster Wall Mockup) -->
+  <section id="products" style="position: relative;">
+    
+    <!-- SVG Displacement Filter for Deckled/Torn Paper Edge -->
+    <svg style="position: absolute; width: 0; height: 0;" width="0" height="0">
+      <defs>
+        <filter id="deckle-edge">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+    </svg>
+
+    <!-- Plaster textured wall background container -->
+    <div class="wall-background" style="padding-top: 6rem; padding-bottom: 6rem;">
+      
+      <!-- Shadow backdrop and side peeks of other sections -->
+      <div class="mockup-page-backdrop left-peek"></div>
+      <div class="mockup-page-backdrop right-peek"></div>
+
+      <!-- Main Floating Website Canvas -->
+      <div class="mockup-canvas state-products" id="appCanvas" style="min-height: 800px;">
+        
+        <!-- Top Navigation Header -->
+        <header class="mockup-header">
+          <div class="logo-group">
+            <!-- Brown Hanuman carrying mountain logo silhouette -->
+            <svg class="hanuman-logo" viewBox="0 0 100 100" width="36" height="36">
+              <!-- Head & Mukut -->
+              <circle cx="48" cy="32" r="5.5" fill="#4a2c11" />
+              <polygon points="44,27 48,16 52,27" fill="#4a2c11" />
+              <!-- Tail curling over back -->
+              <path d="M 56 50 C 74 48, 80 34, 73 20 C 66 10, 54 16, 54 26" fill="none" stroke="#4a2c11" stroke-width="3.5" stroke-linecap="round" />
+              <!-- Left Arm holding Dronagiri Mountain -->
+              <path d="M 43 36 L 28 26 L 22 28 L 26 38 Z" fill="#4a2c11" />
+              <polygon points="10,27 26,7 42,27" fill="#4a2c11" />
+              <polygon points="16,27 23,17 30,27" fill="#4a2c11" />
+              <!-- Right Arm holding Mace (Gada) -->
+              <path d="M 53 36 L 63 43 L 66 40 L 56 33 Z" fill="#4a2c11" />
+              <path d="M 61 40 L 76 56" stroke="#4a2c11" stroke-width="4" stroke-linecap="round" />
+              <circle cx="78" cy="58" r="6" fill="#4a2c11" />
+              <!-- Flying Torso -->
+              <path d="M 44 38 C 47 38, 51 39, 53 45 C 53 51, 48 56, 44 58 Z" fill="#4a2c11" />
+              <!-- Flying Legs -->
+              <path d="M 43 58 L 33 70 L 28 69 L 37 57 Z" fill="#4a2c11" />
+              <path d="M 46 58 L 56 71 L 61 69 L 49 57 Z" fill="#4a2c11" />
+            </svg>
+            <div class="company-name-wrapper">
+              <span class="logo-text-main">M.M. Engineering Works</span>
+            </div>
+          </div>
+          <div style="font-family: var(--font-serif); font-weight: 700; font-size: 1.1rem; color: var(--brown-light); text-transform: uppercase; letter-spacing: 2px;">
+            Interactive Portfolio
+          </div>
+        </header>
+
+        <!-- Carousel Viewport -->
+        <div class="carousel-viewport">
+          
+          <!-- Dynamic Header -->
+          <div class="heading-container">
+            <h1 class="dynamic-heading" id="carouselHeading">OUR ENGINEERING PORTFOLIO</h1>
+          </div>
+
+          <!-- The Antigravity Grid Layout (contains all cards which float, rotate, and fade dynamically) -->
+          <div class="antigravity-grid" id="photoGrid">
+            
+            <!-- Card 1 -->
+            <div class="vintage-card" style="--rot: -1.2deg; --delay: 0s;" data-index="1">
+              <div class="photo-frame">
+                <img src="assets/peb_structure.png" alt="Pre-Engineered Building Framework, Nelamangala">
+                <span class="photo-caption">PEB Truss Framework</span>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="vintage-card" style="--rot: 1.5deg; --delay: 0.05s;" data-index="2">
+              <div class="photo-frame">
+                <img src="assets/hero_industrial.png" alt="Industrial Fabrication Site, Bommasandra">
+                <span class="photo-caption">Heavy Industrial Construction</span>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="vintage-card" style="--rot: -0.8deg; --delay: 0.1s;" data-index="3">
+              <div class="photo-frame">
+                <img src="assets/peb_structure.png" alt="Factory Building Construction, Hoskote">
+                <span class="photo-caption">Structural PEB Factory</span>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="vintage-card" style="--rot: 1.1deg; --delay: 0.15s;" data-index="4">
+              <div class="photo-frame">
+                <img src="assets/sheet_metal.png" alt="Steel Roof Purlins Detail">
+                <span class="photo-caption">Trusses & Purlins Detail</span>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="vintage-card" style="--rot: -1.4deg; --delay: 0.2s;" data-index="5">
+              <div class="photo-frame">
+                <img src="assets/aluminum_works.png" alt="Heavy Column Base and Bracing">
+                <span class="photo-caption">Heavy Columns & Bracing</span>
+              </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="vintage-card" style="--rot: 1.7deg; --delay: 0.25s;" data-index="6">
+              <div class="photo-frame">
+                <img src="assets/rolling_shutters.png" alt="Motorized Shutter Installation, Peenya">
+                <span class="photo-caption">Motorized Rolling Shutters</span>
+              </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="vintage-card" style="--rot: -0.5deg; --delay: 0.3s;" data-index="7">
+              <div class="photo-frame">
+                <img src="assets/peb_structure.png" alt="Steel Roof Truss Construction Grid">
+                <span class="photo-caption">Steel Roof Truss Grid</span>
+              </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="vintage-card" style="--rot: 0.9deg; --delay: 0.35s;" data-index="8">
+              <div class="photo-frame">
+                <img src="assets/hero_industrial.png" alt="Warehouse Structural Girders Erection">
+                <span class="photo-caption">Warehouse Portal Frames</span>
+              </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="vintage-card" style="--rot: -1.6deg; --delay: 0.4s;" data-index="9">
+              <div class="photo-frame">
+                <img src="assets/sheet_metal.png" alt="CNC Laser-Cut Stainless Steel Panels">
+                <span class="photo-caption">Heavy Girders Erection</span>
+              </div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="vintage-card" style="--rot: 1.3deg; --delay: 0.45s;" data-index="10">
+              <div class="photo-frame">
+                <img src="assets/rolling_shutters.png" alt="Galvanized Security Shutter MG Road">
+                <span class="photo-caption">Galvanized Security Doors</span>
+              </div>
+            </div>
+
+            <!-- Card 11 -->
+            <div class="vintage-card" style="--rot: -0.9deg; --delay: 0.5s;" data-index="11">
+              <div class="photo-frame">
+                <img src="assets/security_gates.png" alt="Blue Sliding Gate Jigani">
+                <span class="photo-caption">Blue Steel Grill Wall</span>
+              </div>
+            </div>
+
+            <!-- Card 12 -->
+            <div class="vintage-card" style="--rot: 1.6deg; --delay: 0.55s;" data-index="12">
+              <div class="photo-frame">
+                <img src="assets/peb_structure.png" alt="Warehouse Portal Frame Inside Extension">
+                <span class="photo-caption">Internal PEB Framework</span>
+              </div>
+            </div>
+
+            <!-- Card 13 -->
+            <div class="vintage-card" style="--rot: -1.1deg; --delay: 0.6s;" data-index="13">
+              <div class="photo-frame">
+                <img src="assets/security_gates.png" alt="Ornate Metal Entrance Gate Sadashivanagar">
+                <span class="photo-caption">Decorative Driveway Gates</span>
+              </div>
+            </div>
+
+            <!-- Card 14: Proprietor / Person in Grid -->
+            <div class="vintage-card person-card" style="--rot: 0.5deg; --delay: 0.65s;" data-index="14" id="personCard">
+              <div class="photo-frame">
+                <img src="assets/person_in_grid.png" alt="Proprietor A C Manjunatha at site">
+                <span class="photo-caption" style="font-weight: 700;">A C Manjunatha (Proprietor)</span>
+              </div>
+            </div>
+
+            <!-- Card 15 -->
+            <div class="vintage-card" style="--rot: -1.3deg; --delay: 0.7s;" data-index="15">
+              <div class="photo-frame">
+                <img src="assets/rolling_shutters.png" alt="Blue rolling gate installation">
+                <span class="photo-caption">Blue Sectional Gate</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom controls / Overlapping summary card -->
+          <div class="slide-overlay active" id="slide1Overlay" style="position: relative; margin-top: 1.5rem; pointer-events: auto; opacity: 1;">
+            <div class="grid-footer-actions" style="margin-bottom: 9rem; text-align: center;">
+              <button class="mockup-btn-capsule" id="loadMoreBtn">Load More</button>
+            </div>
+
+            <!-- Floating Contact Panel at bottom overlapping the grid -->
+            <div class="floating-contact-summary" id="floatingSummaryCard" style="margin: 0 auto; left: 0; right: 0;">
+              <div class="summary-left">
+                <svg viewBox="0 0 100 100" width="48" height="48">
+                  <circle cx="48" cy="32" r="5.5" fill="#4a2c11" />
+                  <polygon points="44,27 48,16 52,27" fill="#4a2c11" />
+                  <path d="M 56 50 C 74 48, 80 34, 73 20 C 66 10, 54 16, 54 26" fill="none" stroke="#4a2c11" stroke-width="3.5" stroke-linecap="round" />
+                  <path d="M 43 36 L 28 26 L 22 28 L 26 38 Z" fill="#4a2c11" />
+                  <polygon points="10,27 26,7 42,27" fill="#4a2c11" />
+                  <path d="M 53 36 L 63 43 L 66 40 L 56 33 Z" fill="#4a2c11" />
+                  <path d="M 61 40 L 76 56" stroke="#4a2c11" stroke-width="4" stroke-linecap="round" />
+                  <circle cx="78" cy="58" r="6" fill="#4a2c11" />
+                  <path d="M 44 38 C 47 38, 51 39, 53 45 C 53 51, 48 56, 44 58 Z" fill="#4a2c11" />
+                  <path d="M 43 58 L 33 70 L 28 69 L 37 57 Z" fill="#4a2c11" />
+                  <path d="M 46 58 L 56 71 L 61 69 L 49 57 Z" fill="#4a2c11" />
+                </svg>
+                <div class="summary-company-info">
+                  <h3>M.M. Engineering Works</h3>
+                  <p>Mfrs of: PEB Buildings, Rolling Shutters, Gates, Window Grills, Doors, Sheet Metals, Aluminum Works, S.S Works, etc...</p>
+                </div>
+              </div>
+              
+              <div class="summary-divider"></div>
+
+              <div class="summary-right">
+                <div class="proprietor-tag">| A C Manjunatha</div>
+                <ul class="summary-contact-list">
+                  <li><span class="icon-span">📞</span> +91 98453 98542, +91 98452 33249</li>
+                  <li><span class="icon-span">✉️</span> mmengg.1975@gmail.com</li>
+                  <li><span class="icon-span">📄</span> GSTIN: 29AHEPM6352L1ZV</li>
+                  <li><span class="icon-span">📍</span> Near Biocon, Hosur Main Road, Hebbagodi, Bangalore - 560 099.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Why Choose Us & FAQs Section -->
+  <section class="section" id="why-us" aria-labelledby="whyChooseTitle">
+    <div class="container">
+      <div class="about-faq-grid">
+        
+        <!-- Left: Why Choose Us -->
+        <div class="about-panel-left floating-hover-card" style="padding: 2.5rem; background-color: var(--cream-pure);">
+          <h2 class="sub-heading-brown" id="whyChooseTitle">Why Choose M.M. Engineering?</h2>
+          <p class="about-main-text">Established excellence in PEB Buildings, Rolling Shutters, Gates, and Window Grills with precision engineering.</p>
+          <p class="about-secondary-text" style="margin-bottom: 1.5rem;">Robust expertise delivering industrial structural fabrication, customized doors, and high-safety security fittings in Bangalore.</p>
+          <p class="about-secondary-text">Our facility operates under rigorous safety guidelines and uses only grade-A structural steel. We collaborate with site developers to provide detailed CAD layouts and calculations before fabrication starts.</p>
+        </div>
+
+        <!-- Right: FAQ Cards -->
+        <div class="faq-panel-right" id="faq">
+          <h2 class="sub-heading-brown">Frequently Asked Questions</h2>
+          <div class="faq-card-stack">
+            <div class="floating-faq-card">
+              <h4>Do you offer custom designs?</h4>
+              <p>Yes, all fabrication plans are customized to client specifications, site load requirements, and architectural blueprints.</p>
+            </div>
+            <div class="floating-faq-card">
+              <h4>What is your typical project timeline?</h4>
+              <p>Standard structures take 4-6 weeks from initial design and detailing approval to factory manufacture and final site erection.</p>
+            </div>
+            <div class="floating-faq-card">
+              <h4>What certifications do your steel and welds have?</h4>
+              <p>We use certified IS 2062/ASTM A572 steel, and our welding team holds AWS D1.1 certifications, ensuring supreme structural strength.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section class="section section-bg" id="contact" aria-labelledby="contactTitle">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="contactTitle">Contact & Inquiry</h2>
+        <p>Reach out directly to proprietor A C Manjunatha or submit your project details below to receive a detailed cost estimation.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Left Side: Contact Information Cards -->
+        <div class="contact-info-card" id="contactInfoCard">
+          <div>
+            <h3>Direct Contact Details</h3>
+            
+            <!-- Address Item -->
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="contact-text">
+                <h4>Factory & Office Address</h4>
+                <p>No.23 & 24, Near Biocon,<br>Hosur Main Road, Hebbagodi,<br>Bangalore - 560 099.</p>
+              </div>
+            </div>
+            
+            <!-- Phone Item -->
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="contact-text">
+                <h4>Proprietor: A C Manjunatha</h4>
+                <p>
+                  Call: <a href="tel:+919845398542">+91 98453 98542</a><br>
+                  Call: <a href="tel:+919845233249">+91 98452 33249</a>
+                </p>
+              </div>
+            </div>
+            
+            <!-- Email Item -->
+            <div class="contact-item">
+              <div class="contact-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="contact-text">
+                <h4>Inquiry Email</h4>
+                <p><a href="mailto:mmengg.1975@gmail.com">mmengg.1975@gmail.com</a></p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- GSTIN Badge -->
+          <div class="gstin-badge" id="gstinBadge">
+            <label>GSTIN Number</label>
+            <span>29AHEPM6352L1ZV</span>
+          </div>
+        </div>
+        
+        <!-- Right Side: Contact Form Wrapper -->
+        <div class="contact-form-wrapper" id="contactFormWrapper">
+          <form id="inquiryForm" novalidate>
+            <h3 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 2rem; color: var(--brown-dark);">Submit an Inquiry</h3>
+            
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="e.g. +91 98453 XXXXX" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="e.g. business@domain.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="service">Service Required *</label>
+              <select class="form-control" id="service" name="service" required>
+                <option value="" disabled selected>-- Select fabrication type --</option>
+                <option value="peb">PEB & Steel Structures</option>
+                <option value="shutters">Rolling Shutters & Doors</option>
+                <option value="gates">Security Gates & Grills</option>
+                <option value="sheetmetal">SS & Sheet Metal Fabrication</option>
+                <option value="aluminum">Aluminum Architectural Works</option>
+                <option value="other">Other Structural Fabrication</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Project Description & Dimensions *</label>
+              <textarea class="form-control" id="message" name="message" placeholder="Please describe your project, site location, required dimensions, and materials..." required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;" id="submitInquiryBtn">
+              Submit Estimate Request
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Geographical Google Map Embed -->
+      <div class="map-container" id="mapContainer" style="margin-top: 3rem;">
+        <iframe 
+          class="map-iframe"
+          src="https://maps.google.com/maps?q=M.M.%20Engineering%20Works,%20Hebbagodi,%20Bangalore&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Google Map location of M.M. Engineering Works">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal for Full-screen slideshow -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project ImageViewer">
+    <button class="lightbox-close" aria-label="Close Lightbox">&times;</button>
+    <button class="lightbox-nav lightbox-prev" aria-label="Previous Project">&lsaquo;</button>
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img">
+      <div class="lightbox-caption"></div>
+    </div>
+    <button class="lightbox-nav lightbox-next" aria-label="Next Project">&rsaquo;</button>
   </div>
+
+  <!-- Success Toast Notification -->
+  <div class="toast" id="toast" role="alert" aria-live="assertive">
+    <div class="toast-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+    </div>
+    <div class="toast-content">
+      <h5>Inquiry Sent Successfully!</h5>
+      <p>We will review details and contact you shortly.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container footer-grid">
+      <!-- Col 1: About -->
+      <div class="footer-col">
+        <a href="#home" class="logo-link-multipage" style="margin-bottom: 1.5rem;">
+          <span class="logo-main-text" style="color: var(--cream-pure);">M.M. ENGINEERING</span>
+          <span class="logo-sub-text" style="color: var(--brown-light);">Works</span>
+        </a>
+        <p class="footer-desc">Bangalore's trusted heavy structural fabrication, PEB warehouses, industrial doors, and security steel works manufacturer.</p>
+        <div class="gstin-footer">
+          <label>GSTIN REGISTERED</label>
+          <span>29AHEPM6352L1ZV</span>
+        </div>
+      </div>
+      
+      <!-- Col 2: Navigation -->
+      <div class="footer-col">
+        <h4>Navigation Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home" class="footer-link">&raquo; Home</a></li>
+          <li><a href="#products" class="footer-link">&raquo; Products Showcase</a></li>
+          <li><a href="#why-us" class="footer-link">&raquo; Why Choose Us</a></li>
+          <li><a href="#faq" class="footer-link">&raquo; FAQ</a></li>
+          <li><a href="#contact" class="footer-link">&raquo; Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <!-- Col 3: Services -->
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul class="footer-links">
+          <li><a href="#contact" class="footer-link">&raquo; PEB Steel Structures</a></li>
+          <li><a href="#contact" class="footer-link">&raquo; Industrial Shutters</a></li>
+          <li><a href="#contact" class="footer-link">&raquo; Custom Security Gates</a></li>
+          <li><a href="#contact" class="footer-link">&raquo; SS & Sheet Metal Works</a></li>
+          <li><a href="#contact" class="footer-link">&raquo; Aluminum Works</a></li>
+        </ul>
+      </div>
+      
+      <!-- Col 4: Contact details -->
+      <div class="footer-col">
+        <h4>Direct Contact</h4>
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          <span>No.23 & 24, Near Biocon, Hosur Main Road, Hebbagodi, Bangalore - 560 099.</span>
+        </div>
+        
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          <div>
+            <a href="tel:+919845398542">+91 98453 98542</a><br>
+            <a href="tel:+919845233249">+91 98452 33249</a>
+          </div>
+        </div>
+        
+        <div class="footer-contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <a href="mailto:mmengg.1975@gmail.com">mmengg.1975@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <p>&copy; 2026 M.M. Engineering Works. All rights reserved.</p>
+      <p>Proprietor: A C Manjunatha | Bangalore, Karnataka</p>
+    </div>
+  </footer>
 
   <!-- JavaScript Interaction Script -->
   <script src="main.js"></script>
