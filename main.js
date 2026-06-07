@@ -79,18 +79,23 @@ function initAntigravityCarousel() {
 
   const navBtns = document.querySelectorAll('.nav-btn');
   const dotBtns = document.querySelectorAll('.dot-btn');
-  const slider = document.getElementById('slidesSlider');
-  const viewport = canvas.querySelector('.carousel-viewport');
+  const prevBtn = document.getElementById('prevSlideBtn');
+  const nextBtn = document.getElementById('nextSlideBtn');
+  
+  const slideOverlays = [
+    document.getElementById('slide1Overlay'),
+    document.getElementById('slide2Overlay'),
+    document.getElementById('slide3Overlay')
+  ];
 
   let currentSlide = 1;
 
-  // Primary function to transition slides
   function goToSlide(slideNum) {
     if (slideNum < 1 || slideNum > 3) return;
     
     currentSlide = slideNum;
 
-    // 1. Update state class on canvas
+    // Update state class on canvas
     canvas.classList.remove('state-products', 'state-about', 'state-contact');
     if (currentSlide === 1) {
       canvas.classList.add('state-products');
@@ -100,7 +105,7 @@ function initAntigravityCarousel() {
       canvas.classList.add('state-contact');
     }
 
-    // 2. Update active nav button highlighting
+    // Update active nav button highlighting
     navBtns.forEach(btn => {
       const targetSlide = parseInt(btn.getAttribute('data-slide'));
       if (btn.id === 'navFaq') {
@@ -116,7 +121,7 @@ function initAntigravityCarousel() {
       }
     });
 
-    // 3. Update active dot indicators & slide active pill
+    // Update active dot indicators
     dotBtns.forEach((dot, idx) => {
       if (idx + 1 === currentSlide) {
         dot.classList.add('active');
@@ -125,16 +130,14 @@ function initAntigravityCarousel() {
       }
     });
 
-    const activeDot = dotBtns[currentSlide - 1];
-    const pill = document.getElementById('activePill');
-    if (pill && activeDot) {
-      pill.style.left = (activeDot.offsetLeft - 7) + 'px';
-    }
-
-    // 4. Slide transition
-    if (slider) {
-      slider.style.transform = `translateX(-${(currentSlide - 1) * 33.333}%)`;
-    }
+    // Update active overlay visibility
+    slideOverlays.forEach((overlay, idx) => {
+      if (idx + 1 === currentSlide) {
+        overlay.classList.add('active');
+      } else {
+        overlay.classList.remove('active');
+      }
+    });
   }
 
   // Navigation click routing
@@ -162,6 +165,23 @@ function initAntigravityCarousel() {
     });
   });
 
+  // Navigation Arrows
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      let target = currentSlide - 1;
+      if (target < 1) target = 3;
+      goToSlide(target);
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      let target = currentSlide + 1;
+      if (target > 3) target = 1;
+      goToSlide(target);
+    });
+  }
+
   // Interactive Card Depth effects in Showcase
   const cards = document.querySelectorAll('.vintage-card');
   cards.forEach(card => {
@@ -188,79 +208,6 @@ function initAntigravityCarousel() {
         loadMoreBtn.disabled = false;
       }, 850);
     });
-  }
-
-  // Mouse drag & touch swipe to slide left or right on the viewport
-  if (viewport && slider) {
-    let startX = 0;
-    let diffX = 0;
-    let isDragging = false;
-    let isClick = true;
-    let sliderWidth = slider.offsetWidth;
-
-    window.addEventListener('resize', () => {
-      sliderWidth = slider.offsetWidth;
-    });
-
-    function getX(e) {
-      return e.touches ? e.touches[0].clientX : e.clientX;
-    }
-
-    function dragStart(e) {
-      // Don't start drag on interactive inputs/buttons
-      if (e.target.closest('button') || e.target.closest('a') || e.target.closest('input') || e.target.closest('select') || e.target.closest('textarea')) {
-        return;
-      }
-      isDragging = true;
-      isClick = true;
-      startX = getX(e);
-      diffX = 0;
-      sliderWidth = slider.offsetWidth;
-    }
-
-    function dragMove(e) {
-      if (!isDragging) return;
-      const currentX = getX(e);
-      diffX = currentX - startX;
-
-      if (Math.abs(diffX) > 8) {
-        isClick = false;
-        slider.style.transition = 'none'; // disable transition for real-time tracking
-        const baseTranslatePx = -((currentSlide - 1) * (sliderWidth / 3));
-        const newTranslatePx = baseTranslatePx + diffX;
-        slider.style.transform = `translateX(${newTranslatePx}px)`;
-      }
-    }
-
-    function dragEnd() {
-      if (!isDragging) return;
-      isDragging = false;
-
-      slider.style.transition = 'transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)';
-
-      if (isClick) return;
-
-      const threshold = sliderWidth * 0.12;
-      if (Math.abs(diffX) > threshold) {
-        if (diffX > 0 && currentSlide > 1) {
-          goToSlide(currentSlide - 1);
-        } else if (diffX < 0 && currentSlide < 3) {
-          goToSlide(currentSlide + 1);
-        } else {
-          goToSlide(currentSlide);
-        }
-      } else {
-        goToSlide(currentSlide);
-      }
-    }
-
-    viewport.addEventListener('mousedown', dragStart);
-    window.addEventListener('mousemove', dragMove);
-    window.addEventListener('mouseup', dragEnd);
-
-    viewport.addEventListener('touchstart', dragStart, { passive: true });
-    viewport.addEventListener('touchmove', dragMove, { passive: true });
-    viewport.addEventListener('touchend', dragEnd);
   }
 }
 
