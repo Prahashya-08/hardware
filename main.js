@@ -79,9 +79,8 @@ function initAntigravityCarousel() {
 
   const navBtns = document.querySelectorAll('.nav-btn');
   const dotBtns = document.querySelectorAll('.dot-btn');
-  const prevBtn = document.getElementById('prevSlideBtn');
-  const nextBtn = document.getElementById('nextSlideBtn');
   const slider = document.getElementById('slidesSlider');
+  const viewport = canvas.querySelector('.carousel-viewport');
 
   let currentSlide = 1;
 
@@ -163,23 +162,6 @@ function initAntigravityCarousel() {
     });
   });
 
-  // Arrow Navigation Controls
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      let target = currentSlide - 1;
-      if (target < 1) target = 3;
-      goToSlide(target);
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      let target = currentSlide + 1;
-      if (target > 3) target = 1;
-      goToSlide(target);
-    });
-  }
-
   // Interactive Card Depth effects in Showcase
   const cards = document.querySelectorAll('.vintage-card');
   cards.forEach(card => {
@@ -206,6 +188,79 @@ function initAntigravityCarousel() {
         loadMoreBtn.disabled = false;
       }, 850);
     });
+  }
+
+  // Mouse drag & touch swipe to slide left or right on the viewport
+  if (viewport && slider) {
+    let startX = 0;
+    let diffX = 0;
+    let isDragging = false;
+    let isClick = true;
+    let sliderWidth = slider.offsetWidth;
+
+    window.addEventListener('resize', () => {
+      sliderWidth = slider.offsetWidth;
+    });
+
+    function getX(e) {
+      return e.touches ? e.touches[0].clientX : e.clientX;
+    }
+
+    function dragStart(e) {
+      // Don't start drag on interactive inputs/buttons
+      if (e.target.closest('button') || e.target.closest('a') || e.target.closest('input') || e.target.closest('select') || e.target.closest('textarea')) {
+        return;
+      }
+      isDragging = true;
+      isClick = true;
+      startX = getX(e);
+      diffX = 0;
+      sliderWidth = slider.offsetWidth;
+    }
+
+    function dragMove(e) {
+      if (!isDragging) return;
+      const currentX = getX(e);
+      diffX = currentX - startX;
+
+      if (Math.abs(diffX) > 8) {
+        isClick = false;
+        slider.style.transition = 'none'; // disable transition for real-time tracking
+        const baseTranslatePx = -((currentSlide - 1) * (sliderWidth / 3));
+        const newTranslatePx = baseTranslatePx + diffX;
+        slider.style.transform = `translateX(${newTranslatePx}px)`;
+      }
+    }
+
+    function dragEnd() {
+      if (!isDragging) return;
+      isDragging = false;
+
+      slider.style.transition = 'transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)';
+
+      if (isClick) return;
+
+      const threshold = sliderWidth * 0.12;
+      if (Math.abs(diffX) > threshold) {
+        if (diffX > 0 && currentSlide > 1) {
+          goToSlide(currentSlide - 1);
+        } else if (diffX < 0 && currentSlide < 3) {
+          goToSlide(currentSlide + 1);
+        } else {
+          goToSlide(currentSlide);
+        }
+      } else {
+        goToSlide(currentSlide);
+      }
+    }
+
+    viewport.addEventListener('mousedown', dragStart);
+    window.addEventListener('mousemove', dragMove);
+    window.addEventListener('mouseup', dragEnd);
+
+    viewport.addEventListener('touchstart', dragStart, { passive: true });
+    viewport.addEventListener('touchmove', dragMove, { passive: true });
+    viewport.addEventListener('touchend', dragEnd);
   }
 }
 
