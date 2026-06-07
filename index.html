@@ -75,12 +75,12 @@
       <!-- Carousel Viewport -->
       <div class="carousel-viewport">
         
-        <!-- Dynamic Header (changes content & animation based on active slide) -->
+        <!-- Dynamic Header -->
         <div class="heading-container">
           <h1 class="dynamic-heading" id="carouselHeading">OUR ENGINEERING PORTFOLIO</h1>
         </div>
 
-        <!-- The Antigravity Grid Layout (contains all cards which float, rotate, and fade dynamically) -->
+        <!-- The Antigravity Grid Layout (remains in background) -->
         <div class="antigravity-grid" id="photoGrid">
           
           <!-- Card 1 -->
@@ -205,163 +205,168 @@
 
         </div>
 
-        <!-- Overlapping Slide Contents -->
-        
-        <!-- Slide 1 Content: Products Grid controls & Overlapping Contact Summary Card -->
-        <div class="slide-overlay active" id="slide1Overlay">
-          <div class="grid-footer-actions">
-            <button class="mockup-btn-capsule" id="loadMoreBtn">Load More</button>
-          </div>
-
-          <!-- Floating Contact Panel at bottom overlapping the grid -->
-          <div class="floating-contact-summary" id="floatingSummaryCard">
-            <div class="summary-left">
-              <svg viewBox="0 0 100 100" width="48" height="48">
-                <!-- Head & Mukut -->
-                <circle cx="48" cy="32" r="5.5" fill="#4a2c11" />
-                <polygon points="44,27 48,16 52,27" fill="#4a2c11" />
-                <!-- Tail curling over back -->
-                <path d="M 56 50 C 74 48, 80 34, 73 20 C 66 10, 54 16, 54 26" fill="none" stroke="#4a2c11" stroke-width="3.5" stroke-linecap="round" />
-                <!-- Left Arm holding Dronagiri Mountain -->
-                <path d="M 43 36 L 28 26 L 22 28 L 26 38 Z" fill="#4a2c11" />
-                <polygon points="10,27 26,7 42,27" fill="#4a2c11" />
-                <!-- Right Arm holding Mace (Gada) -->
-                <path d="M 53 36 L 63 43 L 66 40 L 56 33 Z" fill="#4a2c11" />
-                <path d="M 61 40 L 76 56" stroke="#4a2c11" stroke-width="4" stroke-linecap="round" />
-                <circle cx="78" cy="58" r="6" fill="#4a2c11" />
-                <!-- Torso -->
-                <path d="M 44 38 C 47 38, 51 39, 53 45 C 53 51, 48 56, 44 58 Z" fill="#4a2c11" />
-                <!-- Legs -->
-                <path d="M 43 58 L 33 70 L 28 69 L 37 57 Z" fill="#4a2c11" />
-                <path d="M 46 58 L 56 71 L 61 69 L 49 57 Z" fill="#4a2c11" />
-              </svg>
-              <div class="summary-company-info">
-                <h3>M.M. Engineering Works</h3>
-                <p>Mfrs of: PEB Buildings, Rolling Shutters, Gates, Window Grills, Doors, Sheet Metals, Aluminum Works, S.S Works, etc...</p>
-              </div>
-            </div>
+        <!-- Sliding Content Wrapper -->
+        <div class="slides-slider-wrapper">
+          <div class="slides-slider" id="slidesSlider">
             
-            <div class="summary-divider"></div>
+            <!-- Slide 1 Page -->
+            <div class="slide-page" id="slidePage1">
+              <div class="grid-footer-actions">
+                <button class="mockup-btn-capsule" id="loadMoreBtn">Load More</button>
+              </div>
 
-            <div class="summary-right">
-              <div class="proprietor-tag">| A C Manjunatha</div>
-              <ul class="summary-contact-list">
-                <li><span class="icon-span">📞</span> +91 98453 98542, +91 98452 33249</li>
-                <li><span class="icon-span">✉️</span> mmengg.1975@gmail.com</li>
-                <li><span class="icon-span">📄</span> GSTIN: 29AHEPM6352L1ZV</li>
-                <li><span class="icon-span">📍</span> No.23 & 24, Near Biocon, Hosur Main Road, Hebbagodi, Bangalore - 560 099.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 2 Content: About Us & FAQ Block -->
-        <div class="slide-overlay" id="slide2Overlay">
-          <div class="about-faq-grid">
-            <!-- Left: About Content -->
-            <div class="about-panel-left floating-hover-card">
-              <h2 class="sub-heading-brown">Why Choose M.M. Engineering Works?</h2>
-              <p class="about-main-text">Established excellence in PEB Buildings, Rolling Shutters, Gates, and Window Grills. Precision engineering since 1975.</p>
-              <p class="about-secondary-text">Over 50 years of robust expertise delivering industrial structural fabrication, customized doors, and high-safety security fittings in Bangalore.</p>
-            </div>
-
-            <!-- Right: FAQ Cards -->
-            <div class="faq-panel-right">
-              <h2 class="sub-heading-brown">Frequently Asked Questions (FAQ)</h2>
-              <div class="faq-card-stack">
-                <div class="floating-faq-card">
-                  <h4>Do you offer custom designs?</h4>
-                  <p>Yes, all fabrication plans are customized to client specifications, site load requirements, and blueprints.</p>
+              <!-- Floating Contact Panel at bottom overlapping the grid -->
+              <div class="floating-contact-summary" id="floatingSummaryCard">
+                <div class="summary-left">
+                  <svg viewBox="0 0 100 100" width="48" height="48">
+                    <!-- Head & Mukut -->
+                    <circle cx="48" cy="32" r="5.5" fill="#4a2c11" />
+                    <polygon points="44,27 48,16 52,27" fill="#4a2c11" />
+                    <!-- Tail -->
+                    <path d="M 56 50 C 74 48, 80 34, 73 20 C 66 10, 54 16, 54 26" fill="none" stroke="#4a2c11" stroke-width="3.5" stroke-linecap="round" />
+                    <!-- Left Arm & Mountain -->
+                    <path d="M 43 36 L 28 26 L 22 28 L 26 38 Z" fill="#4a2c11" />
+                    <polygon points="10,27 26,7 42,27" fill="#4a2c11" />
+                    <!-- Right Arm & Mace -->
+                    <path d="M 53 36 L 63 43 L 66 40 L 56 33 Z" fill="#4a2c11" />
+                    <path d="M 61 40 L 76 56" stroke="#4a2c11" stroke-width="4" stroke-linecap="round" />
+                    <circle cx="78" cy="58" r="6" fill="#4a2c11" />
+                    <!-- Torso -->
+                    <path d="M 44 38 C 47 38, 51 39, 53 45 C 53 51, 48 56, 44 58 Z" fill="#4a2c11" />
+                    <!-- Legs -->
+                    <path d="M 43 58 L 33 70 L 28 69 L 37 57 Z" fill="#4a2c11" />
+                    <path d="M 46 58 L 56 71 L 61 69 L 49 57 Z" fill="#4a2c11" />
+                  </svg>
+                  <div class="summary-company-info">
+                    <h3>M.M. Engineering Works</h3>
+                    <p>Mfrs of: PEB Buildings, Rolling Shutters, Gates, Window Grills, Doors, Sheet Metals, Aluminum Works, S.S Works, etc...</p>
+                  </div>
                 </div>
-                <div class="floating-faq-card">
-                  <h4>What is your typical project timeline?</h4>
-                  <p>Standard structures take 4-6 weeks from initial design and detailing approval to factory manufacture and final site erection.</p>
+                
+                <div class="summary-divider"></div>
+
+                <div class="summary-right">
+                  <div class="proprietor-tag">| A C Manjunatha</div>
+                  <ul class="summary-contact-list">
+                    <li><span class="icon-span">📞</span> +91 98453 98542, +91 98452 33249</li>
+                    <li><span class="icon-span">✉️</span> mmengg.1975@gmail.com</li>
+                    <li><span class="icon-span">📄</span> GSTIN: 29AHEPM6352L1ZV</li>
+                    <li><span class="icon-span">📍</span> No.23 & 24, Near Biocon, Hosur Main Road, Hebbagodi, Bangalore - 560 099.</li>
+                  </ul>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <!-- Slide 3 Content: Deep Contact Panel -->
-        <div class="slide-overlay" id="slide3Overlay">
-          <div class="contact-deep-panel floating-hover-card">
-            
-            <!-- Left Side: Large Hanuman Logo and Title -->
-            <div class="contact-panel-left">
-              <svg viewBox="0 0 100 100" width="80" height="80">
-                <!-- Head & Mukut -->
-                <circle cx="48" cy="32" r="5.5" fill="#4a2c11" />
-                <polygon points="44,27 48,16 52,27" fill="#4a2c11" />
-                <!-- Tail -->
-                <path d="M 56 50 C 74 48, 80 34, 73 20 C 66 10, 54 16, 54 26" fill="none" stroke="#4a2c11" stroke-width="3.5" stroke-linecap="round" />
-                <!-- Left Arm & Mountain -->
-                <path d="M 43 36 L 28 26 L 22 28 L 26 38 Z" fill="#4a2c11" />
-                <polygon points="10,27 26,7 42,27" fill="#4a2c11" />
-                <!-- Right Arm & Mace -->
-                <path d="M 53 36 L 63 43 L 66 40 L 56 33 Z" fill="#4a2c11" />
-                <path d="M 61 40 L 76 56" stroke="#4a2c11" stroke-width="4" stroke-linecap="round" />
-                <circle cx="78" cy="58" r="6" fill="#4a2c11" />
-                <!-- Torso -->
-                <path d="M 44 38 C 47 38, 51 39, 53 45 C 53 51, 48 56, 44 58 Z" fill="#4a2c11" />
-                <!-- Legs -->
-                <path d="M 43 58 L 33 70 L 28 69 L 37 57 Z" fill="#4a2c11" />
-                <path d="M 46 58 L 56 71 L 61 69 L 49 57 Z" fill="#4a2c11" />
-              </svg>
-              <h2 class="company-brand-title">M.M. Engineering Works</h2>
-              <span class="estd-stamp">ESTABLISHED 1975</span>
+            <!-- Slide 2 Page -->
+            <div class="slide-page" id="slidePage2">
+              <div class="about-faq-grid">
+                <!-- Left: About Content -->
+                <div class="about-panel-left floating-hover-card">
+                  <h2 class="sub-heading-brown">Why Choose M.M. Engineering Works?</h2>
+                  <p class="about-main-text">Established excellence in PEB Buildings, Rolling Shutters, Gates, and Window Grills. Precision engineering since 1975.</p>
+                  <p class="about-secondary-text">Over 50 years of robust expertise delivering industrial structural fabrication, customized doors, and high-safety security fittings in Bangalore.</p>
+                </div>
+
+                <!-- Right: FAQ Cards -->
+                <div class="faq-panel-right">
+                  <h2 class="sub-heading-brown">Frequently Asked Questions (FAQ)</h2>
+                  <div class="faq-card-stack">
+                    <div class="floating-faq-card">
+                      <h4>Do you offer custom designs?</h4>
+                      <p>Yes, all fabrication plans are customized to client specifications, site load requirements, and blueprints.</p>
+                    </div>
+                    <div class="floating-faq-card">
+                      <h4>What is your typical project timeline?</h4>
+                      <p>Standard structures take 4-6 weeks from initial design and detailing approval to factory manufacture and final site erection.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <!-- Vertical Divider -->
-            <div class="contact-panel-divider"></div>
-
-            <!-- Right Side: Detailed Contact Information Blocks -->
-            <div class="contact-panel-right">
-              <div class="contact-header-block">
-                <span class="contact-vertical-bar">|</span>
-                <span class="proprietor-label">A C Manjunatha</span>
-              </div>
-              
-              <ul class="contact-deep-list">
-                <li>
-                  <div class="icon-container">📞</div>
-                  <div class="contact-detail-text">
-                    <span class="detail-label">Direct Contacts</span>
-                    <a href="tel:+919845398542" class="detail-value">+91 98453 98542</a>
-                    <a href="tel:+919845233249" class="detail-value">+91 98452 33249</a>
-                  </div>
-                </li>
-                <li>
-                  <div class="icon-container">✉️</div>
-                  <div class="contact-detail-text">
-                    <span class="detail-label">Business Email</span>
-                    <a href="mailto:mmengg.1975@gmail.com" class="detail-value">mmengg.1975@gmail.com</a>
-                  </div>
-                </li>
-                <li>
-                  <div class="icon-container">📄</div>
-                  <div class="contact-detail-text">
-                    <span class="detail-label">GSTIN Details</span>
-                    <span class="detail-value text-highlight">29AHEPM6352L1ZV</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="icon-container">📍</div>
-                  <div class="contact-detail-text">
-                    <span class="detail-label">Factory & Office Address</span>
-                    <span class="detail-value address-value">No. 23 & 24, Near Biocon, Hosur Main Road, Hebbagodi, Bangalore - 560 099.</span>
-                  </div>
-                </li>
-              </ul>
-
-              <!-- Vector Map Overlapping Card -->
-              <div class="map-overlap-card floating-hover-card">
-                <div class="map-illustration">
-                  <div class="map-grid"></div>
-                  <div class="map-road horizontal"></div>
-                  <div class="map-road vertical"></div>
-                  <div class="map-marker-pin">📍</div>
-                  <div class="map-landmark">Near Biocon</div>
+            <!-- Slide 3 Page -->
+            <div class="slide-page" id="slidePage3">
+              <div class="contact-deep-panel floating-hover-card">
+                
+                <!-- Left Side: Large Hanuman Logo and Title -->
+                <div class="contact-panel-left">
+                  <svg viewBox="0 0 100 100" width="80" height="80">
+                    <!-- Head & Mukut -->
+                    <circle cx="48" cy="32" r="5.5" fill="#4a2c11" />
+                    <polygon points="44,27 48,16 52,27" fill="#4a2c11" />
+                    <!-- Tail -->
+                    <path d="M 56 50 C 74 48, 80 34, 73 20 C 66 10, 54 16, 54 26" fill="none" stroke="#4a2c11" stroke-width="3.5" stroke-linecap="round" />
+                    <!-- Left Arm & Mountain -->
+                    <path d="M 43 36 L 28 26 L 22 28 L 26 38 Z" fill="#4a2c11" />
+                    <polygon points="10,27 26,7 42,27" fill="#4a2c11" />
+                    <!-- Right Arm & Mace -->
+                    <path d="M 53 36 L 63 43 L 66 40 L 56 33 Z" fill="#4a2c11" />
+                    <path d="M 61 40 L 76 56" stroke="#4a2c11" stroke-width="4" stroke-linecap="round" />
+                    <circle cx="78" cy="58" r="6" fill="#4a2c11" />
+                    <!-- Torso -->
+                    <path d="M 44 38 C 47 38, 51 39, 53 45 C 53 51, 48 56, 44 58 Z" fill="#4a2c11" />
+                    <!-- Legs -->
+                    <path d="M 43 58 L 33 70 L 28 69 L 37 57 Z" fill="#4a2c11" />
+                    <path d="M 46 58 L 56 71 L 61 69 L 49 57 Z" fill="#4a2c11" />
+                  </svg>
+                  <h2 class="company-brand-title">M.M. Engineering Works</h2>
+                  <span class="estd-stamp">ESTABLISHED 1975</span>
                 </div>
+
+                <!-- Vertical Divider -->
+                <div class="contact-panel-divider"></div>
+
+                <!-- Right Side: Detailed Contact Details -->
+                <div class="contact-panel-right">
+                  <div class="contact-header-block">
+                    <span class="contact-vertical-bar">|</span>
+                    <span class="proprietor-label">A C Manjunatha</span>
+                  </div>
+                  
+                  <ul class="contact-deep-list">
+                    <li>
+                      <div class="icon-container">📞</div>
+                      <div class="contact-detail-text">
+                        <span class="detail-label">Direct Contacts</span>
+                        <a href="tel:+919845398542" class="detail-value">+91 98453 98542</a>
+                        <a href="tel:+919845233249" class="detail-value">+91 98452 33249</a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="icon-container">✉️</div>
+                      <div class="contact-detail-text">
+                        <span class="detail-label">Business Email</span>
+                        <a href="mailto:mmengg.1975@gmail.com" class="detail-value">mmengg.1975@gmail.com</a>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="icon-container">📄</div>
+                      <div class="contact-detail-text">
+                        <span class="detail-label">GSTIN Details</span>
+                        <span class="detail-value text-highlight">29AHEPM6352L1ZV</span>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="icon-container">📍</div>
+                      <div class="contact-detail-text">
+                        <span class="detail-label">Factory & Office Address</span>
+                        <span class="detail-value address-value">No. 23 & 24, Near Biocon, Hosur Main Road, Hebbagodi, Bangalore - 560 099.</span>
+                      </div>
+                    </li>
+                  </ul>
+
+                  <!-- Vector Map Overlapping Card -->
+                  <div class="map-overlap-card floating-hover-card">
+                    <div class="map-illustration">
+                      <div class="map-grid"></div>
+                      <div class="map-road horizontal"></div>
+                      <div class="map-road vertical"></div>
+                      <div class="map-marker-pin">📍</div>
+                      <div class="map-landmark">Near Biocon</div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
 
@@ -370,23 +375,13 @@
 
       </div>
 
-      <!-- Carousel Navigation Controls at Bottom -->
+      <!-- Carousel Navigation Controls at Bottom (Centered Dots Only) -->
       <div class="carousel-control-deck">
-        <button class="slide-arrow" id="prevSlideBtn" aria-label="Previous Slide">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
         <div class="slide-dot-indicators" id="dotDeck">
           <button class="dot-btn active" data-slide="1" aria-label="Slide 1"></button>
           <button class="dot-btn" data-slide="2" aria-label="Slide 2"></button>
           <button class="dot-btn" data-slide="3" aria-label="Slide 3"></button>
         </div>
-        <button class="slide-arrow" id="nextSlideBtn" aria-label="Next Slide">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
       </div>
 
     </div>

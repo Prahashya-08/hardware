@@ -79,23 +79,17 @@ function initAntigravityCarousel() {
 
   const navBtns = document.querySelectorAll('.nav-btn');
   const dotBtns = document.querySelectorAll('.dot-btn');
-  const prevBtn = document.getElementById('prevSlideBtn');
-  const nextBtn = document.getElementById('nextSlideBtn');
-  
-  const slideOverlays = [
-    document.getElementById('slide1Overlay'),
-    document.getElementById('slide2Overlay'),
-    document.getElementById('slide3Overlay')
-  ];
+  const slider = document.getElementById('slidesSlider');
 
   let currentSlide = 1;
 
+  // Primary function to transition slides
   function goToSlide(slideNum) {
     if (slideNum < 1 || slideNum > 3) return;
     
     currentSlide = slideNum;
 
-    // Update state class on canvas
+    // 1. Update state class on canvas
     canvas.classList.remove('state-products', 'state-about', 'state-contact');
     if (currentSlide === 1) {
       canvas.classList.add('state-products');
@@ -105,7 +99,7 @@ function initAntigravityCarousel() {
       canvas.classList.add('state-contact');
     }
 
-    // Update active nav button highlighting
+    // 2. Update active nav button highlighting
     navBtns.forEach(btn => {
       const targetSlide = parseInt(btn.getAttribute('data-slide'));
       if (btn.id === 'navFaq') {
@@ -121,7 +115,7 @@ function initAntigravityCarousel() {
       }
     });
 
-    // Update active dot indicators
+    // 3. Update active dot indicators
     dotBtns.forEach((dot, idx) => {
       if (idx + 1 === currentSlide) {
         dot.classList.add('active');
@@ -130,14 +124,10 @@ function initAntigravityCarousel() {
       }
     });
 
-    // Update active overlay visibility
-    slideOverlays.forEach((overlay, idx) => {
-      if (idx + 1 === currentSlide) {
-        overlay.classList.add('active');
-      } else {
-        overlay.classList.remove('active');
-      }
-    });
+    // 4. Slide transition
+    if (slider) {
+      slider.style.transform = `translateX(-${(currentSlide - 1) * 33.333}%)`;
+    }
   }
 
   // Navigation click routing
@@ -164,23 +154,6 @@ function initAntigravityCarousel() {
       goToSlide(slideNum);
     });
   });
-
-  // Navigation Arrows
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      let target = currentSlide - 1;
-      if (target < 1) target = 3;
-      goToSlide(target);
-    });
-  }
-
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      let target = currentSlide + 1;
-      if (target > 3) target = 1;
-      goToSlide(target);
-    });
-  }
 
   // Interactive Card Depth effects in Showcase
   const cards = document.querySelectorAll('.vintage-card');
