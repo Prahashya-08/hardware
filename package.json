@@ -1,0 +1,12 @@
+{
+  "name": "mm-engineering-works",
+  "version": "1.0.0",
+  "description": "Antigravity website interface mock-up for M.M. Engineering Works",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx live-server --port=8000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
