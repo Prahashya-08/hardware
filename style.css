@@ -1365,7 +1365,6 @@ a.detail-value:hover {
 }
 
 .gstin-badge span {
-  font-family: monospace;
   font-weight: 700;
   font-size: 1.05rem;
   color: var(--brown-dark);
@@ -1578,7 +1577,6 @@ textarea.form-control {
 }
 
 .gstin-footer span {
-  font-family: monospace;
   font-size: 0.95rem;
   color: var(--cream-pure);
   font-weight: 600;
