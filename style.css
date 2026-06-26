@@ -13,6 +13,7 @@
   --brown-light: #7a593e;      /* Golden Sand Brown */
   --brown-muted: #8b7355;      /* Vintage Sepia Muted */
   --rusty-orange: #d95d39;     /* Rusty Terracotta Orange */
+  --brand-blue: #006bb6;       /* Brand Royal Blue */
   --cream-pure: #fcfbf9;       /* Polaroid White / Bright Cream */
   --cream-soft: #f7f4ed;       /* Main Canvas Background */
   --cream-dark: #eae3d2;       /* Accent Cream / Borders */
@@ -2176,25 +2177,38 @@ textarea.form-control {
 }
 
 /* ==========================================
-   Rusty Orange Font Color Update for Slides 2–6
+   Rusty Orange & Brand Blue Update for Slides 2–6
    ========================================== */
-section:not(.hero),
+
+/* 1. Headings in Rusty Orange */
 section:not(.hero) h1,
 section:not(.hero) h2,
 section:not(.hero) h3,
 section:not(.hero) h4,
 section:not(.hero) h5,
 section:not(.hero) h6,
+section:not(.hero) .proprietor-name,
+section:not(.hero) .dynamic-heading {
+  color: var(--rusty-orange) !important;
+}
+
+/* 2. Body Text and Details in Brand Blue */
+section:not(.hero),
 section:not(.hero) p,
 section:not(.hero) li,
 section:not(.hero) a:not(.btn):not(.btn-hero):not(.nav-link),
 section:not(.hero) span:not(.contact-icon):not(.proprietor-icon):not(.gstin-badge):not(.gstin-footer),
 section:not(.hero) label {
-  color: var(--rusty-orange) !important;
+  color: var(--brand-blue) !important;
 }
 
-section:not(.hero) .about-secondary-text {
-  color: var(--rusty-orange) !important;
-  opacity: 0.9;
+/* 3. Icon Accent Alignment */
+section:not(.hero) .feature-icon,
+section:not(.hero) .icon-container,
+section:not(.hero) .contact-icon {
+  color: var(--brand-blue) !important;
+  background-color: rgba(0, 107, 182, 0.1) !important;
+  border-color: rgba(0, 107, 182, 0.2) !important;
 }
+
 
