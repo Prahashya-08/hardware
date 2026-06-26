@@ -427,7 +427,7 @@ a {
 .antigravity-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 175px);
+  grid-template-rows: repeat(4, 175px);
   gap: 1.5rem;
   z-index: 10;
   transition: var(--transition-slow);
@@ -951,6 +951,11 @@ a.detail-value:hover {
 .state-about .vintage-card[data-index="13"] { transform: translateY(-110px) scale(0.6) rotate(-11deg); }
 .state-about .vintage-card[data-index="14"] { transform: translateY(-85px) scale(0.8) rotate(8deg); }
 .state-about .vintage-card[data-index="15"] { transform: translateY(-100px) scale(0.7) rotate(-17deg); }
+.state-about .vintage-card[data-index="16"] { transform: translateY(-70px) scale(0.7) rotate(-14deg); }
+.state-about .vintage-card[data-index="17"] { transform: translateY(-115px) scale(0.65) rotate(11deg); }
+.state-about .vintage-card[data-index="18"] { transform: translateY(-85px) scale(0.75) rotate(-9deg); }
+.state-about .vintage-card[data-index="19"] { transform: translateY(-90px) scale(0.7) rotate(18deg); }
+.state-about .vintage-card[data-index="20"] { transform: translateY(-65px) scale(0.8) rotate(-12deg); }
 
 .state-contact #carouselHeading {
   opacity: 0;
@@ -1641,10 +1646,7 @@ textarea.form-control {
 @media (max-width: 1024px) {
   .antigravity-grid {
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 160px);
-  }
-  .vintage-card[data-index="15"] {
-    display: none;
+    grid-template-rows: repeat(5, 160px);
   }
   .floating-contact-summary {
     width: 90%;
@@ -1694,7 +1696,7 @@ textarea.form-control {
   
   .antigravity-grid {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 140px);
+    grid-template-rows: repeat(7, 140px);
   }
   
   .floating-contact-summary {
