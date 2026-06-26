@@ -12,6 +12,7 @@
   --brown-medium: #5c4033;     /* Warm Earth Brown */
   --brown-light: #7a593e;      /* Golden Sand Brown */
   --brown-muted: #8b7355;      /* Vintage Sepia Muted */
+  --rusty-orange: #d95d39;     /* Rusty Terracotta Orange */
   --cream-pure: #fcfbf9;       /* Polaroid White / Bright Cream */
   --cream-soft: #f7f4ed;       /* Main Canvas Background */
   --cream-dark: #eae3d2;       /* Accent Cream / Borders */
@@ -2173,3 +2174,27 @@ textarea.form-control {
     padding: 0.8rem 2rem;
   }
 }
+
+/* ==========================================
+   Rusty Orange Font Color Update for Slides 2–6
+   ========================================== */
+section:not(.hero),
+section:not(.hero) h1,
+section:not(.hero) h2,
+section:not(.hero) h3,
+section:not(.hero) h4,
+section:not(.hero) h5,
+section:not(.hero) h6,
+section:not(.hero) p,
+section:not(.hero) li,
+section:not(.hero) a:not(.btn):not(.btn-hero):not(.nav-link),
+section:not(.hero) span:not(.contact-icon):not(.proprietor-icon):not(.gstin-badge):not(.gstin-footer),
+section:not(.hero) label {
+  color: var(--rusty-orange) !important;
+}
+
+section:not(.hero) .about-secondary-text {
+  color: var(--rusty-orange) !important;
+  opacity: 0.9;
+}
+
