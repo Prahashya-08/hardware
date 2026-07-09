@@ -224,6 +224,43 @@ function initProductsGrid() {
       }
     });
   }
+
+  // 4. "See More / See Less" toggle logic
+  const seeMoreBtn = document.getElementById('seeMoreBtn');
+  if (seeMoreBtn) {
+    let isExpanded = false;
+    seeMoreBtn.addEventListener('click', () => {
+      isExpanded = !isExpanded;
+      
+      cards.forEach(card => {
+        const index = parseInt(card.getAttribute('data-index'));
+        if (index > 12) {
+          if (isExpanded) {
+            card.classList.remove('card-hidden');
+          } else {
+            card.classList.add('card-hidden');
+          }
+        }
+      });
+      
+      if (isExpanded) {
+        seeMoreBtn.textContent = 'See Less';
+      } else {
+        seeMoreBtn.textContent = 'See More Projects';
+        
+        // Smoothly scroll back to the products header or top of grid
+        const productsSection = document.getElementById('products');
+        if (productsSection) {
+          const headerHeight = document.getElementById('mainHeader') ? document.getElementById('mainHeader').offsetHeight : 80;
+          const targetOffset = productsSection.offsetTop - headerHeight + 50; // offset a bit to show title nicely
+          window.scrollTo({
+            top: targetOffset,
+            behavior: 'smooth'
+          });
+        }
+      }
+    });
+  }
 }
 
 

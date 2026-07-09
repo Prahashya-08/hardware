@@ -449,6 +449,11 @@ a {
   filter: url(#deckle-edge);
 }
 
+.vintage-card.card-hidden {
+  display: none !important;
+}
+
+
 .photo-frame {
   width: 100%;
   height: 100%;
@@ -2072,13 +2077,13 @@ textarea.form-control {
 
 .hero-brand-name {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   letter-spacing: 2px;
   color: var(--cream-pure);
   text-transform: uppercase;
   margin-bottom: 0.5rem;
-  font-weight: 500;
-  opacity: 0.9;
+  font-weight: 700;
+  opacity: 0.95;
 }
 
 .hero-tagline {
@@ -2093,11 +2098,11 @@ textarea.form-control {
 
 .hero h1 {
   font-family: var(--font-serif);
-  font-size: 3.75rem;
-  line-height: 1.15;
+  font-size: 2.75rem;
+  line-height: 1.2;
   color: var(--cream-pure);
   margin-bottom: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 1px;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
@@ -2162,8 +2167,11 @@ textarea.form-control {
 
 /* Responsive adjustment for Hero section */
 @media (max-width: 768px) {
+  .hero-brand-name {
+    font-size: 1.8rem;
+  }
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 1.9rem;
   }
   .hero-desc {
     font-size: 0.95rem;
